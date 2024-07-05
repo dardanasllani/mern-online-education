@@ -9,6 +9,10 @@ import Record from "./components/Record";
 import RecordList from "./components/RecordList";
 import "./index.css";
 
+const asd = async () => {
+  return "data here"
+}
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <RecordList />,
+        loader: asd
       },
     ],
   },

@@ -1,4 +1,10 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
+import dotenv from 'dotenv';
+import path from 'path'
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.resolve(__dirname, '../config.env')});
 
 const uri = process.env.ATLAS_URI || "";
 const client = new MongoClient(uri, {
@@ -21,6 +27,6 @@ try {
   console.error(err);
 }
 
-let db = client.db("employees");
+let db = client.db("elearning_platform");
 
 export default db;
